@@ -8,7 +8,8 @@
 
 (ns sandbar.core
   "Common code used throughout Sandbar."
-  (:require [hiccup [page-helpers :as helpers]]))
+  (:require [hiccup [page :as page]
+             [element :as element]]))
 
 ;;
 ;; Working with context paths
@@ -42,7 +43,7 @@
 (defn clink-to
   "Create a link to path, prefixing the path with the context path."
   [path title]
-  (helpers/link-to (cpath path) title))
+  (element/link-to (cpath path) title))
 
 ;;
 ;; Resource location
@@ -126,12 +127,12 @@
 (defn stylesheet
   "Convert a css file name into the correct path to that file."
   [name]
-  (helpers/include-css (str (css-path) name)))
+  (page/include-css (str (css-path) name)))
 
 (defn javascript
   "Convert a javascript file name into the correct path to that file."
   [name]
-  (helpers/include-js (str (js-path) name)))
+  (page/include-js (str (js-path) name)))
 
 (defn icon
   "Create a link to an icon with the correct mime type."
@@ -177,7 +178,7 @@
   (let [[form title qualifier] args
         function (str (name (first form)))
         args (rest form)]
-    `(helpers/link-to
+    `(element/link-to
       (str "javascript:"
            ~function
            (when ~qualifier

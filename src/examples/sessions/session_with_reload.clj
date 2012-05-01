@@ -12,7 +12,7 @@
         [ring.middleware reload]
         [ring.middleware.session memory]
         [compojure core]
-        [hiccup core page-helpers]
+        [hiccup core page]
         [sandbar stateful-session]))
 
 (defn layout [title counter link]

@@ -1,7 +1,8 @@
 (ns examples.forms.views
   "Common views which are used by all of the form examples."
   (:use [hiccup.core :only [html]]
-        [hiccup.page-helpers :only [doctype link-to]]
+        [hiccup.element :only [link-to]]
+        [hiccup.page :only [doctype]]
         [sandbar.stateful-session :only [flash-get]]
         [sandbar.core :only [icon stylesheet]])
   (:require [examples.forms.database :as db]))

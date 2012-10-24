@@ -6,8 +6,9 @@
         [ring.middleware.reload :only [wrap-reload]]
         [ring.middleware.session.memory :only [memory-store]]
         [compojure.core :only [defroutes GET]]
-        [hiccup.core :only [html]]
-        [hiccup.page-helpers :only [doctype link-to]]
+        [hiccup.core :only [html]] 
+        [hiccup.element :only [link-to]]
+        [hiccup.page :only [doctype]]
         [sandbar.stateful-session :only [wrap-stateful-session
                                          session-put!
                                          flash-put!

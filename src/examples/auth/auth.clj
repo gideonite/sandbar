@@ -13,7 +13,8 @@
         [ring.middleware.file :only (wrap-file)]
         [compojure.core :only (defroutes GET ANY)]
         [hiccup.core :only (html)]
-        [hiccup.page-helpers :only (doctype link-to)]
+        [hiccup.element :only (link-to)]
+        [hiccup.page :only (doctype)]
         [sandbar.auth :only (ensure-any-role-if any-role-granted? current-username logout! with-security)]
         [sandbar.core :only (stylesheet)]
         [sandbar.stateful-session :only (wrap-stateful-session)]))
